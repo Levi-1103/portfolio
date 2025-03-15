@@ -133,7 +133,7 @@ export default function Home() {
               description="This is my portfolio site"
               githubLink="https://github.com/Levi-1103/portfolio/"
               projectLink="https://leventeistvan.com/"
-              tags={["Astro", "React", "Tailwind", "Docker"]}
+              tags={["Next.js", "Tailwind", "TypeScript",]}
             />
           </div>
         </section>
@@ -174,8 +174,8 @@ export default function Home() {
               <TechStack
                 technologies={[
                   // { name: "VS Code", icon: "/vercel.svg" },
-                  { name: "Git", icon: "/git.svg" },
                   { name: "GitHub", icon: "/github.svg" },
+                  { name: "Git", icon: "/git.svg" },
                 ]}
               />
             </TabsContent>

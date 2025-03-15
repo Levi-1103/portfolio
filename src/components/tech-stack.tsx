@@ -17,7 +17,7 @@ export default function TechStack({ technologies }: TechStackProps) {
         <div className="grid grid-cols-2 md:grid-cols-5 justify-center gap-5">
 
             {technologies.map((tech, index) => (
-                <Card className="items-center justify-center bg-background gap-2 h-32 w-32"
+                <Card className="items-center justify-center bg-background gap-2"
                     key={index}
                 >
                     <div className="overflow-hidden">
