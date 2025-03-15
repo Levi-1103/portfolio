@@ -113,9 +113,8 @@ export default function Home() {
               <h2 className="text-3xl font-bold tracking-tight">Things I've Built</h2>
               <p className="text-muted-foreground mt-2">A collection of projects I've worked on.</p>
             </div>
-            <Button variant="outline" size="sm">
-              View All
-              <ExternalLink className="ml-2 h-4 w-4" />
+            <Button asChild variant="outline" size="sm">
+              <Link href={socialLinks.gitHub}>View All<ExternalLink className="ml-2 h-4 w-4" /></Link>
             </Button>
           </div>
 
