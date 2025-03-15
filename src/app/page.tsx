@@ -93,10 +93,10 @@ export default function Home() {
                 <Button asChild>
                   <Link href="mailto:istvanlevi@gmail.com">Contact Me</Link>
                 </Button>
-                <Button variant="outline">
+                {/* <Button variant="outline">
                   Resume
                   <ExternalLink className="ml-2 h-4 w-4" />
-                </Button>
+                </Button> */}
               </div>
 
               {/* Spotify Now Playing */}
