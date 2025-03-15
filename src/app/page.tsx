@@ -5,7 +5,7 @@ import TechStack from "@/components/tech-stack";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ExternalLink, Github, Linkedin } from "lucide-react";
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   const navLinks = [
@@ -13,33 +13,34 @@ export default function Home() {
     { href: "#projects", label: "Projects" },
     { href: "#tech", label: "Tech" },
   ]
+  const socialLinks = {
+    linkedIn: "https://linkedin.com/in/listvan",
+    gitHub: "https://github.com/Levi-1103"
+  }
   return (
     <div className="min-h-screen w-full">
       <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="flex h-16 items-center justify-between p-10">
+        <div className="flex h-16 items-center justify-between p-10 md:px-20">
           <div className="flex items-center gap-6 md:gap-10">
             <a href="#" className="font-bold tracking-tight">
               Levente Istvan
             </a>
             <nav className="hidden md:flex gap-6">
-              <a href="#" className="text-sm font-medium transition-colors hover:text-primary">
-                Home
-              </a>
-              <a href="#projects" className="text-sm font-medium transition-colors hover:text-primary">
-                Projects
-              </a>
-              {/* <a href="#guestbook" className="text-sm font-medium transition-colors hover:text-primary">
-                Guestbook
-              </a> */}
-              <a href="#tech" className="text-sm font-medium transition-colors hover:text-primary">
-                Tech
-              </a>
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-medium transition-colors hover:text-primary"
+                >
+                  {link.label}
+                </a>
+              ))}
             </nav>
           </div>
           <div className="flex items-center gap-4">
             <MobileNav links={navLinks} />
             <a
-              href="https://github.com"
+              href={socialLinks.gitHub}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full p-2 hover:bg-muted transition-colors"
@@ -48,7 +49,7 @@ export default function Home() {
               <span className="sr-only">GitHub</span>
             </a>
             <a
-              href="https://linkedin.com"
+              href={socialLinks.linkedIn}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full p-2 hover:bg-muted transition-colors"
@@ -61,7 +62,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="p-10 md:p-20">
+      <main className="p-10 md:px-20">
         {/* Hero Section */}
         <section className="space-y-6 pb-12 pt-6">
           <div className="flex flex-col md:flex-row gap-8 items-center">
@@ -82,14 +83,16 @@ export default function Home() {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
                 Hi, I'm Levi <span className="animate-wave inline-block">👋</span>
               </h1>
-              <p className="max-w-[42rem] text-muted-foreground text-lg md:text-xl">
+              <p className="max-w-2xl text-muted-foreground text-lg md:text-xl">
                 Software developer passionate about backend development and self-hosting.
               </p>
-              <p className="max-w-[42rem] text-muted-foreground">
+              <p className="max-w-2xl text-muted-foreground">
                 Constantly experimenting, learning, and improving to build efficient solutions.
               </p>
               <div className="flex gap-4 justify-center md:justify-start">
-                <Button>Contact Me</Button>
+                <Button asChild>
+                  <Link href="mailto:istvanlevi@gmail.com">Contact Me</Link>
+                </Button>
                 <Button variant="outline">
                   Resume
                   <ExternalLink className="ml-2 h-4 w-4" />
@@ -120,14 +123,16 @@ export default function Home() {
             <ProjectCard
               title="drive_clone"
               description="File hosting service made with Next.js"
-              link="https://github.com"
+              githubLink="https://github.com/Levi-1103/drive-clone"
+              projectLink="https://drive.komorebi.lol/"
               tags={["Next.js", "TypeScript", "TailwindCSS", "Postgres", "Drizzle", "Auth.js", "Codify"]}
             />
 
             <ProjectCard
               title="me_site"
               description="This is my portfolio site"
-              link="https://github.com"
+              githubLink="https://github.com/Levi-1103/portfolio/"
+              projectLink="https://leventeistvan.com/"
               tags={["Astro", "React", "Tailwind", "Docker"]}
             />
           </div>

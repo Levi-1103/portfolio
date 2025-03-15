@@ -37,7 +37,7 @@ async function getCurrentlyPlaying(accessToken: string) {
     if (response.status === 204) return null; // No song playing
     return response.json();
 }
-export async function GET(request: Request) {
+export async function GET() {
 
     try {
         const accessToken = await getAccessToken();
@@ -46,7 +46,7 @@ export async function GET(request: Request) {
 
         return Response.json({
             name: song.item.name,
-            artists: song.item.artists.map((artist: any) => artist.name).join(", "),
+            artists: song.item.artists.map((artist: { name: string; }) => artist.name).join(", "),
             album: song.item.album.name,
             albumArt: song.item.album.images[0]?.url,
             url: song.item.external_urls.spotify,
@@ -57,6 +57,7 @@ export async function GET(request: Request) {
         });
 
     } catch (error) {
+        console.error(error)
         return Response.json({ error: "Failed to fetch song" }, { status: 500 });
     };
 }

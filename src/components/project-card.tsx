@@ -1,20 +1,20 @@
 "use client"
 
-import { useState } from "react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Github, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 interface ProjectCardProps {
     title: string
     description: string
-    link: string
+    githubLink: string
+    projectLink: string
     tags: string[]
 }
 
-export default function ProjectCard({ title, description, link, tags }: ProjectCardProps) {
-    const [isHovered, setIsHovered] = useState(false)
+export default function ProjectCard({ title, description, githubLink, projectLink, tags }: ProjectCardProps) {
 
     return (
         <div
@@ -25,7 +25,7 @@ export default function ProjectCard({ title, description, link, tags }: ProjectC
                     <div className="flex items-center justify-between">
                         <CardTitle className="text-xl font-bold">{title}</CardTitle>
                         <a
-                            href={link}
+                            href={githubLink}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-muted-foreground hover:text-primary transition-colors"
@@ -47,7 +47,7 @@ export default function ProjectCard({ title, description, link, tags }: ProjectC
                 </CardContent>
                 <CardFooter className="pt-3 pb-4">
                     <Button variant="outline" size="sm" className="w-full group">
-                        <span>View Project</span>
+                        <Link href={projectLink}>View Project</Link>
                         <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Button>
                 </CardFooter>

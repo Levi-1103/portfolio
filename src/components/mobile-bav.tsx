@@ -25,7 +25,7 @@ export function MobileNav({ links }: MobileNavProps) {
             </SheetTrigger>
             <SheetContent side="left" className="w-[250px] sm:w-[300px]">
                 <SheetHeader>
-                    <SheetTitle className="text-left">Levente Istvan</SheetTitle>
+                    <SheetTitle className="text-left"></SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col gap-4 mt-8 p-2">
                     {links.map((link) => (
