@@ -46,9 +46,9 @@ export default function ProjectCard({ title, description, githubLink, projectLin
                     </div>
                 </CardContent>
                 <CardFooter className="pt-3 pb-4">
-                    <Button variant="outline" size="sm" className="w-full group">
-                        <Link href={projectLink}>View Project</Link>
-                        <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    <Button asChild variant="outline" size="sm" className="w-full group">
+                        <Link className="flex flex-row" href={projectLink}>View Project <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" /></Link>
+
                     </Button>
                 </CardFooter>
             </Card>
