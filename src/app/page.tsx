@@ -1,3 +1,4 @@
+import { MobileNav } from "@/components/mobile-bav";
 import ProjectCard from "@/components/project-card";
 import SpotifyNowPlaying from "@/components/spotify-now-playing";
 import TechStack from "@/components/tech-stack";
@@ -7,8 +8,13 @@ import { ExternalLink, Github, Linkedin } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
+  const navLinks = [
+    { href: "#", label: "Home" },
+    { href: "#projects", label: "Projects" },
+    { href: "#tech", label: "Tech" },
+  ]
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen w-full">
       <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="flex h-16 items-center justify-between p-10">
           <div className="flex items-center gap-6 md:gap-10">
@@ -31,6 +37,7 @@ export default function Home() {
             </nav>
           </div>
           <div className="flex items-center gap-4">
+            <MobileNav links={navLinks} />
             <a
               href="https://github.com"
               target="_blank"
@@ -54,11 +61,11 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="p-10">
+      <main className="p-10 md:p-20">
         {/* Hero Section */}
         <section className="space-y-6 pb-12 pt-6">
           <div className="flex flex-col md:flex-row gap-8 items-center">
-            <div className="relative size-32 md:size-40 overflow-hidden rounded-full border-4 border-primary/20 shadow-xl">
+            {/* <div className="relative size-32 md:size-40 overflow-hidden rounded-full border-4 border-primary/20 shadow-xl">
               <Image
                 src="/gopher.png"
                 alt="Levi's profile picture"
@@ -67,7 +74,7 @@ export default function Home() {
                 className="object-cover"
                 priority
               />
-            </div>
+            </div> */}
             <div className="space-y-4 text-center md:text-left">
               <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
                 Software Developer
@@ -139,10 +146,10 @@ export default function Home() {
             <TabsContent value="frontend" className="mt-6">
               <TechStack
                 technologies={[
+                  { name: "Next.js", icon: "/nextjs.svg" },
                   { name: "React", icon: "/react.svg" },
                   { name: "TypeScript", icon: "/typescript.svg" },
                   { name: "Tailwind CSS", icon: "/tailwind.svg" },
-                  { name: "Next.js", icon: "/nextjs.svg" },
                   { name: "Astro", icon: "/astro.svg" },
                 ]}
               />
@@ -164,7 +171,6 @@ export default function Home() {
                   // { name: "VS Code", icon: "/vercel.svg" },
                   { name: "Git", icon: "/git.svg" },
                   { name: "GitHub", icon: "/github.svg" },
-
                 ]}
               />
             </TabsContent>

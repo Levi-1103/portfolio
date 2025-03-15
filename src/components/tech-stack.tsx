@@ -1,4 +1,4 @@
-"use client"
+
 
 import Image from "next/image"
 import { Card } from "./ui/card"
@@ -14,10 +14,10 @@ interface TechStackProps {
 
 export default function TechStack({ technologies }: TechStackProps) {
     return (
-        <div className="flex flex-row justify-center gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-5 justify-center gap-5">
 
             {technologies.map((tech, index) => (
-                <Card className="items-center grow bg-background gap-2 aspect-square size-32"
+                <Card className="items-center justify-center bg-background gap-2 h-32 w-32"
                     key={index}
                 >
                     <div className="overflow-hidden">

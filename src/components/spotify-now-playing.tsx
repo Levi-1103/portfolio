@@ -80,7 +80,7 @@ export default function SpotifyNowPlaying() {
                 <div className="flex items-center gap-4">
                     <div className="relative flex-shrink-0">
 
-                        <div className="relative size-16 rounded-md overflow-hidden">
+                        <div className="size-16 rounded-md overflow-hidden justify-center border-2">
 
                             <Image
                                 src={song?.albumArt ?? "/vercel.svg"}
