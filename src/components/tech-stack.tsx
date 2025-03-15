@@ -14,9 +14,10 @@ interface TechStackProps {
 
 export default function TechStack({ technologies }: TechStackProps) {
     return (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+        <div className="flex flex-row justify-center gap-5">
+
             {technologies.map((tech, index) => (
-                <Card className="items-center bg-background gap-3 size-32"
+                <Card className="items-center grow bg-background gap-2 aspect-square size-32"
                     key={index}
                 >
                     <div className="overflow-hidden">

@@ -13,7 +13,7 @@ export default function Home() {
         <div className="flex h-16 items-center justify-between p-10">
           <div className="flex items-center gap-6 md:gap-10">
             <a href="#" className="font-bold tracking-tight">
-              komorebi.lol
+              Levente Istvan
             </a>
             <nav className="hidden md:flex gap-6">
               <a href="#" className="text-sm font-medium transition-colors hover:text-primary">
@@ -22,9 +22,9 @@ export default function Home() {
               <a href="#projects" className="text-sm font-medium transition-colors hover:text-primary">
                 Projects
               </a>
-              <a href="#guestbook" className="text-sm font-medium transition-colors hover:text-primary">
+              {/* <a href="#guestbook" className="text-sm font-medium transition-colors hover:text-primary">
                 Guestbook
-              </a>
+              </a> */}
               <a href="#tech" className="text-sm font-medium transition-colors hover:text-primary">
                 Tech
               </a>
@@ -59,14 +59,14 @@ export default function Home() {
         <section className="space-y-6 pb-12 pt-6">
           <div className="flex flex-col md:flex-row gap-8 items-center">
             <div className="relative size-32 md:size-40 overflow-hidden rounded-full border-4 border-primary/20 shadow-xl">
-              {/* <Image
-                src="/placeholder.svg?height=160&width=160"
+              <Image
+                src="/gopher.png"
                 alt="Levi's profile picture"
                 width={160}
                 height={160}
                 className="object-cover"
                 priority
-              /> */}
+              />
             </div>
             <div className="space-y-4 text-center md:text-left">
               <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
