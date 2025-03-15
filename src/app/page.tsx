@@ -139,31 +139,32 @@ export default function Home() {
             <TabsContent value="frontend" className="mt-6">
               <TechStack
                 technologies={[
-                  { name: "React", icon: "/vercel.svg" },
-                  { name: "TypeScript", icon: "/vercel.svg" },
-                  { name: "Tailwind CSS", icon: "/vercel.svg" },
-                  { name: "Next.js", icon: "/vercel.svg" },
-                  { name: "Astro", icon: "/vercel.svg" },
+                  { name: "React", icon: "/react.svg" },
+                  { name: "TypeScript", icon: "/typescript.svg" },
+                  { name: "Tailwind CSS", icon: "/tailwind.svg" },
+                  { name: "Next.js", icon: "/nextjs.svg" },
+                  { name: "Astro", icon: "/astro.svg" },
                 ]}
               />
             </TabsContent>
             <TabsContent value="backend" className="mt-6">
               <TechStack
                 technologies={[
-                  { name: "Node.js", icon: "/vercel.svg" },
-                  { name: "PostgreSQL", icon: "/vercel.svg" },
-                  { name: "Docker", icon: "/vercel.svg" },
-                  { name: "Drizzle", icon: "/vercel.svg" },
+                  { name: "Golang", icon: "/go.svg" },
+                  { name: "Python", icon: "/python.svg" },
+                  { name: "PostgreSQL", icon: "/postgres.svg" },
+                  { name: "Docker", icon: "/docker.svg" },
+                  { name: "Drizzle", icon: "/drizzle.svg" },
                 ]}
               />
             </TabsContent>
             <TabsContent value="tools" className="mt-6">
               <TechStack
                 technologies={[
-                  { name: "VS Code", icon: "/vercel.svg" },
-                  { name: "Git", icon: "/vercel.svg" },
-                  { name: "GitHub", icon: "/vercel.svg" },
-                  { name: "Vercel", icon: "/vercel.svg" },
+                  // { name: "VS Code", icon: "/vercel.svg" },
+                  { name: "Git", icon: "/git.svg" },
+                  { name: "GitHub", icon: "/github.svg" },
+
                 ]}
               />
             </TabsContent>

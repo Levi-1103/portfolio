@@ -23,9 +23,6 @@ const formatTime = (ms: number) => {
     return `${minutes}:${seconds.toString().padStart(2, "0")}`;
 };
 
-
-
-
 export default function SpotifyNowPlaying() {
     const [isPlaying, setIsPlaying] = useState(false)
     const [progressBar, setProgressBar] = useState(0)
@@ -46,7 +43,7 @@ export default function SpotifyNowPlaying() {
         }
 
         fetchSong()
-        const interval = setInterval(fetchSong, 1000); // Refresh every 30s
+        const interval = setInterval(fetchSong, 100000); // Refresh every 30s
         setProgressBar((song?.progress! / song?.length_ms!) * 100)
         setMax(formatTime(song?.length_ms!))
         setProgress(formatTime(song?.progress!))
