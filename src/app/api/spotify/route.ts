@@ -37,15 +37,12 @@ async function getCurrentlyPlaying(accessToken: string) {
     if (response.status === 204) return null; // No song playing
     return response.json();
 }
-
 export async function GET(request: Request) {
 
     try {
         const accessToken = await getAccessToken();
         const song = await getCurrentlyPlaying(accessToken);
         if (!song) return Response.json({ error: "No song playing" }, { status: 200 });
-
-
 
         return Response.json({
             name: song.item.name,
