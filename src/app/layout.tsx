@@ -10,7 +10,8 @@ export const metadata: Metadata = {
   description: "Portfolio of Levente Istvan, a software developer specializing in Golang and React. Explore my projects, skills, and contact information.",
   keywords: ["Levi", "Levente Istvan", "Backend Developer", "Fullstack Developer", "Software Developer", "Next.js", "Golang", "Python", "React", "Portfolio"],
   authors: [{ name: "Levente Istvan" }],
-  creator: "Levente Istvan"
+  creator: "Levente Istvan",
+
 };
 
 export default function RootLayout({
