@@ -93,10 +93,9 @@ export default function Home() {
                 <Button asChild>
                   <Link href="mailto:istvanlevi@gmail.com">Contact Me</Link>
                 </Button>
-                {/* <Button variant="outline">
-                  Resume
-                  <ExternalLink className="ml-2 h-4 w-4" />
-                </Button> */}
+                <Button variant="outline">
+                  <Link className="flex flex-row" href="/files/resume.pdf" target="_blank">Resume <ExternalLink className="ml-2 h-4 w-4" /></Link>
+                </Button>
               </div>
 
               {/* Spotify Now Playing */}
