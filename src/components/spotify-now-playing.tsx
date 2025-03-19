@@ -5,6 +5,8 @@ import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { ExternalLink } from "lucide-react"
 import { Progress } from "./ui/progress"
+import useSWR from 'swr'
+
 
 export interface Track {
     name: string
@@ -23,6 +25,7 @@ const formatTime = (ms: number) => {
     return `${minutes}:${seconds.toString().padStart(2, "0")}`;
 };
 
+
 export default function SpotifyNowPlaying() {
     const [isPlaying, setIsPlaying] = useState(false)
     const [progressBar, setProgressBar] = useState(0)
@@ -32,7 +35,6 @@ export default function SpotifyNowPlaying() {
 
     // Simulate progress bar movement
     useEffect(() => {
-        // if (!isPlaying) return
         async function fetchSong() {
             const response = await fetch("/api/spotify");
             const data = await response.json();
@@ -41,9 +43,7 @@ export default function SpotifyNowPlaying() {
                 setIsPlaying(data.is_playing)
             }
         }
-
-        fetchSong()
-        const interval = setInterval(fetchSong, 100000); // Refresh every 30s
+        const interval = setInterval(fetchSong, 1000); // Refresh every 30s
         setProgressBar((song?.progress! / song?.length_ms!) * 100)
         setMax(formatTime(song?.length_ms!))
         setProgress(formatTime(song?.progress!))
@@ -74,7 +74,8 @@ export default function SpotifyNowPlaying() {
             </Card>
         )
     }
-    return (
+
+    if (song) return (
         <Card className="overflow-hidden border-2 hover:border-green-500/50 transition-all duration-300 bg-background">
             <CardContent className="p-4">
                 <div className="flex items-center gap-4">
@@ -83,8 +84,8 @@ export default function SpotifyNowPlaying() {
                         <div className="size-16 rounded-md overflow-hidden justify-center border-2">
 
                             <Image
-                                src={song?.albumArt ?? "/vercel.svg"}
-                                alt={`${song?.album} album cover`}
+                                src={song.albumArt}
+                                alt={`${song.album} album cover`}
                                 width={64}
                                 height={64}
                                 className="object-cover"
@@ -103,7 +104,7 @@ export default function SpotifyNowPlaying() {
                                 <span className="text-xs text-muted-foreground">Now playing</span>
                             </div>
                             <a
-                                href={song?.url}
+                                href={song.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-muted-foreground hover:text-green-500 transition-colors"
@@ -115,8 +116,8 @@ export default function SpotifyNowPlaying() {
 
                         </div>
 
-                        <h3 className="font-medium truncate mt-1">{song?.name}</h3>
-                        <p className="text-sm text-muted-foreground truncate">{song?.artists}</p>
+                        <h3 className="font-medium truncate mt-1">{song.name}</h3>
+                        <p className="text-sm text-muted-foreground truncate">{song.artists}</p>
 
                         <div className="mt-2 space-y-1">
 
